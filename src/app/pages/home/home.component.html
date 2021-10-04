@@ -1,0 +1,19 @@
+<div *ngIf="loading" class="loading animated fadeIn">
+    <h3>Cargando...</h3>
+    <br>
+    <i class="fas fa-spinner fa-spin fa-5x mt-2"></i>
+</div>
+
+<div *ngIf="err" class="loading animated fadeIn">
+    <h3>We're sorry! Something went wrong...</h3>
+    <br>
+    <i class="far fa-times-circle fa-5x mt-2"></i>
+</div>
+
+<app-banner [peliculas]="latest" idCarousel="populares" titulo="Now playing in teathers"></app-banner>
+<br>
+<app-banner [peliculas]="toprated" idCarousel="posicionadas" titulo="Top rated movies"></app-banner>
+<br>
+<app-banner [peliculas]="upcoming" idCarousel="estrenos" titulo="Upcoming movies in theatres"></app-banner>
+
+<div class="div"></div>

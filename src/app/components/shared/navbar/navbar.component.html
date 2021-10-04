@@ -1,0 +1,35 @@
+<nav>
+    <div class="navbar center-between">
+        <div class="logo">
+            <h1 routerLink="home">MovieApp</h1>
+        </div>
+
+        <div class="nav-icon">
+            <i class="fas fa-bars" *ngIf="!menu" (click)="toggle()"></i>
+            <i class="fas fa-times" *ngIf="menu" (click)="toggle()"></i>
+        </div>
+
+        <div [ngClass]="{'hide': !menu, 'show': menu}" class="nav-menu-wrap center-around">
+            <ul class="nav-menu center-between fade-in ">
+                <li><a href="#" routerLinkActive="nav-active" routerLink="/list/latest" (click)="menu = false">Latest</a></li>
+                <li><a href="#" routerLinkActive="nav-active" routerLink="/list/rated" (click)="menu = false">Top Rated</a></li>
+                <li><a href="#" routerLinkActive="nav-active" routerLink="/list/upcoming" (click)="menu = false">Upcoming</a></li>
+            </ul>
+            <div class="form-wrapper" *ngIf="searchMenu">
+                <div class="form">
+                    <input #queryInput (keyup.enter)="search(queryInput.value)" class="nav-search" type="text" placeholder="Search..">
+
+                    <button (click)="search(queryInput.value)"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+
+            <!-- <div class="nav-search" (click)="menu = false">
+                <a href="#" routerLinkActive="nav-active" routerLink="search">Search </a>
+                
+            </div> -->
+
+        </div>
+
+    </div>
+</nav>

@@ -1,0 +1,226 @@
+/********* Banner *********/
+
+.card {
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.img-bg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.banner {
+    height: 80vh;
+    margin-bottom: 5%;
+}
+
+.gradient {
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .3) 100%);
+}
+
+
+/*title*/
+
+.sm-title {
+    font-size: 6em;
+}
+
+.md-title {
+    font-size: 3em;
+}
+
+.lg-title {
+    font-size: 2.5em;
+}
+
+.text {
+    text-align: left;
+}
+
+.text h3 {
+    padding: 10px 0px;
+    color: white;
+}
+
+.text p {
+    padding: 10px 0px;
+    font-family: 'Poppins Light';
+    font-size: 0.7em;
+}
+
+.text button {
+    margin: 10px 30px 0px 0px;
+    font-family: 'Poppins Light';
+    font-size: 0.7em;
+    color: white;
+    padding: 10px 35px;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .3s ease all;
+}
+
+.text button:hover {
+    background-color: white;
+    color: black;
+}
+
+.text button:focus {
+    border: none;
+    outline: none;
+}
+
+
+/********* Carousel *********/
+
+.section-wrap {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.carousel {
+    margin-top: 50px;
+}
+
+.carousel-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.carousel-title h3 {
+    font-size: 1.5em;
+}
+
+.indicadores button {
+    background-color: white;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.indicadores button:hover,
+.indicadores button.activo {
+    background-color: var(--primary);
+}
+
+.movies-container {
+    width: 100%;
+    padding: 20px 0px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.movies {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.movie {
+    min-width: 33.33%;
+    transition: .3s ease all;
+    padding: 0px 5px;
+    cursor: pointer;
+}
+
+.movie:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.movie:focus {
+    border: none;
+    outline: none;
+}
+
+.movie img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.carousel-movies {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.carousel-movies .carousel-button {
+    border: none;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px 5px;
+    color: white;
+    position: absolute;
+    top: calc(50% - 25%);
+    transition: .2s ease all;
+    font-size: 2em;
+    height: 50%;
+    z-index: 1;
+}
+
+.carousel-movies .carousel-button:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.carousel-movies .carousel-button:focus {
+    border: none;
+    outline: none;
+}
+
+.carousel-movies #left-button {
+    left: 0;
+}
+
+.carousel-movies #right-button {
+    right: 0;
+}
+
+.display-wrapper {
+    padding: 2% 0;
+}
+
+
+/* Small tablets styles */
+
+@media screen and (min-width: 500px) {
+    .page-title h1 {
+        font-size: 3em;
+    }
+}
+
+@media screen and (min-width: 715px) {
+    .movie {
+        min-width: 25%;
+        padding: 0px 10px;
+    }
+}
+
+
+/* Desktop */
+
+@media screen and (min-width: 960px) {
+    .banner {
+        margin-bottom: 2%;
+    }
+    .movie {
+        min-width: 20%;
+    }
+    .display-wrapper {
+        margin: 0 5%
+    }
+    .section-wrap {
+        margin: 0;
+        padding-left: 5%;
+        padding-bottom: 5%;
+    }
+    .text {
+        width: 50%;
+    }
+}

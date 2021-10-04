@@ -1,0 +1,9 @@
+<div class="grid">
+    <div class="card-wrap" *ngFor="let movie of movies">
+        <div class="movies">
+            <div class="movie animate__animated animate__fadeIn" [routerLink]="['/movie', movie.id]">
+                <img [src]="movie | peliculaImagen:true" alt="">
+            </div>
+        </div>
+    </div>
+</div>

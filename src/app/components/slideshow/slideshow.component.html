@@ -1,0 +1,16 @@
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide" *ngFor="let movie of movies">
+            <img [src]="movie | peliculaImagen:true" [alt]="movie.title" [routerLink]="['/movie', movie.id]">
+        </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div (click)="prevSlide()" class="swiper-button-prev"></div>
+    <div (click)="nextSlide()" class="swiper-button-next"></div>
+</div>

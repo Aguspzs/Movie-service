@@ -1,0 +1,19 @@
+/* Small tablets styles */
+
+.div {
+    height: 10vh;
+}
+
+@media screen and (min-width: 500px) {
+    .page-title h1 {
+        font-size: 3em;
+    }
+    .page-title h5 {
+        font-size: 0.6em;
+    }
+}
+
+
+/* Desktop */
+
+@media screen and (min-width: 960px) {}

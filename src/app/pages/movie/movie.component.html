@@ -1,0 +1,99 @@
+<div *ngIf="loading" class="loading animated fadeIn">
+    <h3>Cargando...</h3>
+    <br>
+    <i class="fas fa-spinner fa-spin fa-5x mt-2"></i>
+</div>
+
+<div *ngIf="err" class="loading animated fadeIn">
+    <h3>We're sorry! Something went wrong...</h3>
+    <br>
+    <i class="far fa-times-circle fa-5x mt-2"></i>
+</div>
+
+<div class="grid animate__animated animate__fadeIn" *ngIf="!loading">
+    <!-- BANNER -->
+    <div class="banner center-center" [ngStyle]="{'background-image':'url( ' + ( pelicula | peliculaImagen ) + ' )'}">
+        <div class="gradient center-start">
+            <!-- POSTER -->
+            <div class="movie-img">
+                <img [src]="pelicula | peliculaImagen:true" alt="Movie poster">
+                <!-- title -->
+                <div class="movie-info-wrapper">
+
+                    <h3 [ngClass]="getClass(pelicula.title)" class="title">{{ pelicula.title }}</h3>
+                    <div class="movie-info menu-l">
+                        <!-- stars -->
+                        <div class="star">
+                            <p class="star-number">{{ pelicula.vote_average }}</p>
+                            <star-rating class="stars" [value]="pelicula.vote_average" totalstars="10" checkedcolor="gold" uncheckedcolor="grey" size="24px" readonly="false"></star-rating>
+                        </div>
+                        <!-- overview -->
+                        <p class="overview">{{ pelicula.overview }}</p>
+                        <!-- realease date -->
+                        <div class="release">
+                            <h3>Release date: </h3>
+                            <p>{{ pelicula.release_date }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="movie-info menu-s">
+        <!-- stars -->
+        <div class="star">
+            <p class="star-number">{{ pelicula.vote_average }}</p>
+            <star-rating class="stars" [value]="pelicula.vote_average" totalstars="10" checkedcolor="gold" uncheckedcolor="grey" size="24px" readonly="false"></star-rating>
+        </div>
+        <!-- overview -->
+        <p class="overview">{{ pelicula.overview }}</p>
+        <!-- realease date -->
+        <div class="release">
+            <h3>Release date: </h3>
+            <p>{{ pelicula.release_date }}</p>
+        </div>
+    </div>
+
+</div>
+<div class="content" *ngIf="!loading">
+    <!-- SIMILAR MOVIES -->
+    <div class="movie-similars" *ngIf="similarMovies.length > 0">
+        <h4>Similar movies</h4>
+        <div class="movie-similars-wrapper menu-s">
+            <app-slideshow [movies]="similarMovies"></app-slideshow>
+        </div>
+        <div class="movie-similars-wrapper menu-l">
+            <app-display [peliculas]="similarMovies" idCarousel="similarMovies" titulo="Similar Movies"></app-display>
+        </div>
+    </div>
+    <div class="movie-similars" *ngIf="similarMovies.length === 0">
+        <h4>Similar movies</h4>
+        <img src="../../../assets/notavaliable.jpg">
+    </div>
+    <!-- MOVIE CAST -->
+    <div class="movie-cast" *ngIf="castMovie.length > 0">
+        <h4>Movie cast</h4>
+        <app-display [peliculas]="castMovie" idCarousel="cast" titulo="Movie Cast" text=true></app-display>
+    </div>
+    <div class="movie-cast" *ngIf="castMovie.length === 0">
+        <h4>Movie cast</h4>
+        <span>No available</span>
+    </div>
+    <!-- GENRES -->
+    <div class="movie-genres">
+        <h4>Genres</h4>
+        <div class="span-container" *ngIf="pelicula.genres.length !== 0">
+            <span *ngFor="let genre of pelicula.genres; index as i">{{ pelicula.genres[i].name }}</span>
+        </div>
+        <div class="span-container" *ngIf="pelicula.genres.length === 0">
+            <span>No available</span>
+        </div>
+    </div>
+    <div class="movie-button">
+        <button class="back" (click)="goBack()">Back</button>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>

@@ -1,0 +1,160 @@
+/********* Carousel *********/
+
+.section-wrap {
+    width: 100%;
+    margin: 0;
+}
+
+.carousel {
+    margin-top: 0;
+}
+
+.carousel-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.carousel-title h3 {
+    font-size: 1.5em;
+    padding-left: 2%;
+    padding-bottom: 1%;
+}
+
+.movies-container {
+    width: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding: 3% 0;
+}
+
+.movies {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.movie {
+    min-width: 33.33%;
+    transition: .3s ease all;
+    padding: 0px 5px;
+    cursor: pointer;
+}
+
+.movie:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.movie:focus {
+    border: none;
+    outline: none;
+}
+
+.movie img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.img-title {
+    text-align: center;
+}
+
+.img-title h5 {
+    font-size: 0.7em;
+    padding-top: 10px;
+}
+
+.img-title small {
+    font-size: 0.6em;
+}
+
+.carousel-movies {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-height: 500px;
+}
+
+.carousel-movies .carousel-button {
+    border: none;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px 5px;
+    color: white;
+    position: absolute;
+    top: calc(50% - 25%);
+    transition: .2s ease all;
+    font-size: 2em;
+    height: 50%;
+    z-index: 1;
+}
+
+.carousel-movies .carousel-button:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.carousel-movies .carousel-button:focus {
+    border: none;
+    outline: none;
+}
+
+.carousel-movies #left-button {
+    left: 0;
+}
+
+.carousel-movies #right-button {
+    right: 0;
+}
+
+
+/* Less than five elements */
+
+.four-elements {
+    width: 80% !important;
+}
+
+.three-elements {
+    width: 60% !important;
+}
+
+.two-elements {
+    width: 40% !important;
+}
+
+.one-elements {
+    width: 20% !important;
+}
+
+
+/* Small tablets styles */
+
+@media screen and (min-width: 500px) {
+    .carousel-title h3 {
+        padding-left: 1%;
+    }
+}
+
+@media screen and (min-width: 715px) {
+    .movie {
+        min-width: 25%;
+        padding: 0px 10px;
+    }
+    .carousel-title h3 {
+        padding-left: 1.5%;
+    }
+}
+
+
+/* Desktop */
+
+@media screen and (min-width: 960px) {
+    .movie {
+        min-width: 20%;
+    }
+    .carousel-title h3 {
+        padding-left: 0.9%;
+        font-size: 2em;
+        padding-bottom: 0;
+        align-self: baseline;
+    }
+}

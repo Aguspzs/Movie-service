@@ -1,0 +1,19 @@
+h2 {
+    font-family: 'Poppins Light';
+    text-align: center;
+    margin: 5% 0;
+    text-transform: uppercase;
+}
+
+.wrapper {
+    padding: 1% 5%;
+}
+
+@media (min-width: 769px) {
+    .wrapper {
+        padding: 5%;
+    }
+    h2 {
+        display: none;
+    }
+}

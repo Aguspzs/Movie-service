@@ -1,0 +1,51 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    width: 100%;
+}
+
+.card-wrap {
+    margin: 5px
+}
+
+.movies {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.movie {
+    min-width: 33.33%;
+    transition: .3s ease all;
+    padding: 0px 5px;
+    cursor: pointer;
+}
+
+.movie:hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.movie:focus {
+    border: none;
+    outline: none;
+}
+
+.movie img {
+    width: 100%;
+    vertical-align: top;
+}
+
+@media screen and (min-width: 715px) {
+    .grid {
+        grid-template-columns: repeat(3, 33.33%);
+    }
+}
+
+
+/* Desktop */
+
+@media screen and (min-width: 960px) {
+    .grid {
+        grid-template-columns: repeat(4, 25%);
+    }
+}

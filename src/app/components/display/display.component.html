@@ -1,0 +1,20 @@
+<div class="section-wrap carousel animate__animated animate__fadeIn" *ngIf="peliculas">
+    <div *ngIf="title" class="carousel-title">
+        <h3>{{ titulo }}</h3>
+    </div>
+    <div class="carousel-movies" [ngClass]="{'four-elements': peliculas.length === 4, 'three-elements':peliculas.length === 3, 'two-elements': peliculas.length === 2,'one-elements': peliculas.length === 1}">
+        <button (click)="goLeft(idCarousel)" role="button" id="left-button" class="carousel-button"><i class="fas fa-chevron-left"></i></button>
+        <div class="movies-container" id="{{idCarousel}}">
+            <div class="movies">
+                <div *ngFor="let pelicula of peliculas; index as i" class="movie" (click)="redirect( peliculas[i].id )">
+                    <img [src]="peliculas[i] | peliculaImagen:true" alt="">
+                    <div *ngIf="text" class="img-title">
+                        <h5>{{ pelicula.name}}</h5>
+                        <small>({{pelicula.character}})</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button (click)="goRight(idCarousel)" role="button" id="right-button" class="carousel-button"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</div>

@@ -1,0 +1,163 @@
+/* Variables */
+
+:root {
+    --primary: rgb(170, 9, 9);
+    --secondary: white;
+    --terciary: black;
+}
+
+
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
+
+
+/* Base styles */
+
+body {
+    width: 100%;
+    color: var(--secondary);
+    background: var(--terciary);
+    font-family: 'Rubik Regular';
+    font-size: 20px;
+    overflow-x: hidden;
+}
+
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Rubik Regular';
+    src: url('./assets/fonts/Rubik-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Bebas Neue Regular';
+    src: url('./assets/fonts/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url('./assets/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Light';
+    src: url('./assets/fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Bold';
+    src: url('./assets/fonts/Poppins-Bold.ttf');
+}
+
+h2,
+h3,
+h4 {
+    font-family: 'Bebas Neue Regular';
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    color: var(--primary);
+}
+
+.center-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-start {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+/*Loading*/
+
+.loading {
+    width: 85%;
+    text-align: center;
+    margin: 80px auto;
+}
+
+.loading h3 {
+    color: white;
+}
+
+
+/*Fade in and out*/
+
+.fade-in {
+    animation: fadeIn 0.5s;
+    -webkit-animation: fadeIn 0.5s;
+    -moz-animation: fadeIn 0.5s;
+    -o-animation: fadeIn 0.5s;
+    -ms-animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

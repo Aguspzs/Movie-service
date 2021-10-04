@@ -1,0 +1,14 @@
+<div class="banner img-bg animate__animated animate__fadeIn" [ngStyle]="{'background-image':'url( ' + ( peliculas[n] | peliculaImagen ) + ' )'}">
+    <div class="banner gradient card">
+        <div class="text section-wrap">
+            <h3 [ngClass]="getClass(peliculas[n].title)">{{ peliculas[n].title }}</h3>
+            <p> {{ (peliculas[n].overview.length > 150)? (peliculas[n].overview | slice:0:150)+'...':(peliculas[n].overview ) }} </p>
+
+            <button [routerLink]="['/movie', peliculas[n].id]"><i class="fas fa-info-circle"></i> See more</button>
+        </div>
+    </div>
+</div>
+
+<div class="display-wrapper">
+    <app-display [peliculas]="peliculas" [idCarousel]="idCarousel" [titulo]="titulo" title=true></app-display>
+</div>

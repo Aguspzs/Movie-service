@@ -1,0 +1,22 @@
+.swiper-container {
+    width: 90%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    border: none;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px 5px;
+    color: white;
+    position: absolute;
+    transition: .2s ease all;
+    font-size: 2em;
+    height: 50%;
+    top: calc(50% - 25%);
+}
