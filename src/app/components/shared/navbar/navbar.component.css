@@ -17,7 +17,7 @@ nav {
     font-family: 'Bebas Neue Regular';
     background: -webkit-linear-gradient(rgb(255, 12, 12), #333);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
     font-size: 1.5em;
     cursor: pointer;
     z-index: 999;
@@ -34,6 +34,7 @@ nav {
 }
 
 .nav-menu-wrap {
+    overflow: hidden;
     position: absolute;
     top: 10vh;
     width: 100%;

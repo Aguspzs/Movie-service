@@ -21,27 +21,27 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.location.onUrlChange( (url: string) => {
-      let currentUrl = url.slice(0,7);
-
-      if(currentUrl === '/search'){
-        this.searchMenu = false;
-      }else{
-        this.searchMenu = true;
-      }
-     
-    })
+    
   }
 
   toggle(){
     this.menu = !this.menu;
+   
+    //Prevent scrolling when menu is on
+    if (this.menu) {
+      window.onscroll = () => {
+        window.scrollTo(0, 0);
+      }
+    }else{
+      window.onscroll = null;
+    }
   }
 
   search(value){
     if(value === ''){
       return
     }
-    this.menu = false;
+    this.toggle();
     this.router.navigate(['/search'], { queryParams: { query: value} });
     
   }

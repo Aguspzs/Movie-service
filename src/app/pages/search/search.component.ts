@@ -29,18 +29,26 @@ export class SearchComponent implements OnInit {
       const max = ( document.documentElement.scrollHeight || document.body.scrollHeight );
   
       if(pos>max){
+        if( this.movieService.cargando ) { 
+          return 
+        }else{
 
-        if(this.nextPage<=this.totalPages) { 
-          
-          this.movieService.searchMovies(this.query, this.nextPage).subscribe( resp => {
-              this.moviesLoad = resp.results.filter( (movie) => {
-                movie.poster_path !== null && movie.adult == false;
-              } );
+          if(this.nextPage<=this.totalPages) { 
+            
+            this.movieService.searchMovies(this.query, this.nextPage).subscribe( resp => {
+              
+              this.moviesLoad = resp.results.filter(movie=>
+                movie.poster_path !== null
+              );
               this.movies.push(...this.moviesLoad);
               this.nextPage+=1;
-              
-       
-            });
+
+
+                
+         
+              });
+        }
+
         }
         
       }
@@ -56,11 +64,11 @@ export class SearchComponent implements OnInit {
     
     this.activatedRoute.queryParams.subscribe(params =>{
       this.query = params.query;
+      this.searchMovie()
     })
-    this.searchMovie()
 
   }
-  
+ 
   searchMovie(){
     
     if(this.query.length == 0){

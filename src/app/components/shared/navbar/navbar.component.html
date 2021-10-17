@@ -11,9 +11,9 @@
 
         <div [ngClass]="{'hide': !menu, 'show': menu}" class="nav-menu-wrap center-around">
             <ul class="nav-menu center-between fade-in ">
-                <li><a href="#" routerLinkActive="nav-active" routerLink="/list/latest" (click)="menu = false">Latest</a></li>
-                <li><a href="#" routerLinkActive="nav-active" routerLink="/list/rated" (click)="menu = false">Top Rated</a></li>
-                <li><a href="#" routerLinkActive="nav-active" routerLink="/list/upcoming" (click)="menu = false">Upcoming</a></li>
+                <li><a href="#" routerLinkActive="nav-active" routerLink="/list/latest" (click)="toggle()">Latest</a></li>
+                <li><a href="#" routerLinkActive="nav-active" routerLink="/list/rated" (click)="toggle()">Top Rated</a></li>
+                <li><a href="#" routerLinkActive="nav-active" routerLink="/list/upcoming" (click)="toggle()">Upcoming</a></li>
             </ul>
             <div class="form-wrapper" *ngIf="searchMenu">
                 <div class="form">
