@@ -12,8 +12,6 @@ import { Location } from '@angular/common';
 export class NavbarComponent implements OnInit {
   
   menu: boolean = false;
-  searchMenu: boolean = true;
-  windowWidth: boolean = false;
 
 
   constructor(private router: Router, private location: Location) {
@@ -25,15 +23,21 @@ export class NavbarComponent implements OnInit {
   }
 
   toggle(){
-    this.menu = !this.menu;
-   
-    //Prevent scrolling when menu is on
-    if (this.menu) {
-      window.onscroll = () => {
-        window.scrollTo(0, 0);
+    if (window.screen.width<769){
+      
+      this.menu = !this.menu;
+     
+      //Prevent scrolling when menu is on
+      if (this.menu) {
+        window.onscroll = () => {
+          window.scrollTo(0, 0);
+        }
+      }else{
+        window.onscroll = null;
       }
+
     }else{
-      window.onscroll = null;
+      return
     }
   }
 

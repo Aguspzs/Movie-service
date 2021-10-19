@@ -15,7 +15,7 @@
                 <li><a href="#" routerLinkActive="nav-active" routerLink="/list/rated" (click)="toggle()">Top Rated</a></li>
                 <li><a href="#" routerLinkActive="nav-active" routerLink="/list/upcoming" (click)="toggle()">Upcoming</a></li>
             </ul>
-            <div class="form-wrapper" *ngIf="searchMenu">
+            <div class="form-wrapper">
                 <div class="form">
                     <input #queryInput (keyup.enter)="search(queryInput.value)" class="nav-search" type="text" placeholder="Search..">
 
